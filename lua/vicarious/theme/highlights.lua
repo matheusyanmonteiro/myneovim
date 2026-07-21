@@ -245,6 +245,10 @@ function M.apply_integrations()
     MasonHighlight = { fg = p.cyan },
     DapBreakpoint = { fg = p.red },
     DapStopped = { fg = p.yellow, bg = "#211F12" },
+    SidekickNormal = { fg = p.foreground, bg = p.background_2 },
+    SidekickNormalNC = { fg = p.muted, bg = p.background_2 },
+    SidekickWinSeparator = { fg = p.cyan, bg = p.background },
+    VicariousStatusAi = { fg = p.background, bg = p.magenta, bold = true },
 
     RenderMarkdownH1 = { fg = p.cyan, bold = true },
     RenderMarkdownH2 = { fg = p.purple, bold = true },

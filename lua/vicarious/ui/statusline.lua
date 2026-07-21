@@ -80,6 +80,22 @@ local function lsp_name(buf)
   return "LSP " .. table.concat(names, "+")
 end
 
+local function ai_segment()
+  if not package.loaded["sidekick.status"] then
+    return ""
+  end
+
+  local ok, sessions = pcall(function()
+    return require("sidekick.status").cli()
+  end)
+  if not ok or type(sessions) ~= "table" or #sessions == 0 then
+    return ""
+  end
+
+  local count = #sessions > 1 and (" " .. #sessions) or ""
+  return "%#VicariousStatusAi# AI" .. count .. " "
+end
+
 function M.render()
   local buf, win = status_buffer()
   local active = win == vim.api.nvim_get_current_win()
@@ -124,6 +140,7 @@ function M.render()
     branch_segment,
     diagnostic_segment,
     "%=",
+    ai_segment(),
     study_segment,
     "%#VicariousStatusLsp# " .. escape(lsp_name(buf)) .. " ",
     "%#VicariousStatusSection# " .. escape(filetype) .. " · %l:%c · " .. os.date("%H:%M") .. " ",

@@ -27,6 +27,7 @@ specifications and restores the revisions stored in `lazy-lock.json`.
 | `lua/vicarious/study.lua` | focus session state and timer |
 | `lua/config/` | native options, mappings, LSP and terminal |
 | `lua/plugins/` | plugin specifications grouped by feature |
+| `lua/plugins/ai.lua` | Codex and Claude CLI workbench through Sidekick |
 | `after/ftplugin/cpp.lua` | C++-specific indentation and compiler command |
 | `scripts/` | reproducible installation and health checks |
 | `docs/` | usage, architecture and recovery documentation |
@@ -53,5 +54,7 @@ machine.
 - nvim-treesitter restores configured parsers during its build step.
 - mason-lspconfig restores `clangd`.
 - mason-tool-installer restores both `clangd` and `codelldb`.
+- lazy.nvim restores the pinned Sidekick bridge; Codex and Claude remain
+  user-installed CLIs and keep their credentials outside this repository.
 - `scripts/bootstrap.sh` installs system prerequisites and invokes all of the
   above in headless mode.

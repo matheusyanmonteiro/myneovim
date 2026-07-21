@@ -23,6 +23,21 @@ The script:
 5. Restores plugins and the exact revisions from `lazy-lock.json`.
 6. Restores Treesitter parsers, clangd and codelldb.
 
+### Restore the AI agents
+
+The Neovim plugin is restored by Lazy, but credentials are intentionally not
+stored in Git. Install the official CLIs and launch each once to sign in:
+
+```bash
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
+curl -fsSL https://claude.ai/install.sh | bash
+codex
+claude
+```
+
+See the [AI workbench guide](AI_WORKBENCH.md) for authentication boundaries,
+keymaps and troubleshooting.
+
 If all system dependencies are already installed:
 
 ```bash
@@ -52,6 +67,7 @@ Inside Neovim, useful diagnostics are:
 :Lazy
 :Mason
 :LspInfo
+:checkhealth sidekick
 ```
 
 ## Updating the backup

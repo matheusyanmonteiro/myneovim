@@ -53,21 +53,21 @@ install_system_packages() {
   if command -v apt-get >/dev/null 2>&1; then
     info "Installing base packages with apt. Sudo may request your password."
     sudo apt-get update
-    sudo apt-get install -y git curl ca-certificates tar gzip unzip ripgrep fd-find build-essential
+    sudo apt-get install -y git curl ca-certificates tar gzip unzip ripgrep fd-find build-essential lsof procps
   elif command -v dnf >/dev/null 2>&1; then
     info "Installing base packages with dnf."
-    sudo dnf install -y git curl ca-certificates tar gzip unzip ripgrep fd-find gcc gcc-c++ make
+    sudo dnf install -y git curl ca-certificates tar gzip unzip ripgrep fd-find gcc gcc-c++ make lsof procps-ng
   elif command -v pacman >/dev/null 2>&1; then
     info "Installing base packages with pacman."
-    sudo pacman -Sy --needed git curl ca-certificates tar gzip unzip ripgrep fd base-devel
+    sudo pacman -Sy --needed git curl ca-certificates tar gzip unzip ripgrep fd base-devel lsof procps-ng
   elif command -v zypper >/dev/null 2>&1; then
     info "Installing base packages with zypper."
-    sudo zypper --non-interactive install git curl ca-certificates tar gzip unzip ripgrep fd gcc gcc-c++ make
+    sudo zypper --non-interactive install git curl ca-certificates tar gzip unzip ripgrep fd gcc gcc-c++ make lsof procps
   elif command -v brew >/dev/null 2>&1; then
     info "Installing base packages with Homebrew."
     brew install git curl ripgrep fd
   else
-    warn "No supported package manager found. Install git, curl, tar, gzip, ripgrep, fd and a C/C++ compiler manually."
+    warn "No supported package manager found. Install git, curl, tar, gzip, ripgrep, fd, lsof and a C/C++ compiler manually."
   fi
 }
 

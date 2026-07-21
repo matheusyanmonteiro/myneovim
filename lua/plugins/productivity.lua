@@ -48,6 +48,7 @@ return {
       preset = "modern",
       delay = 300,
       spec = {
+        { "<leader>a", group = "IA / Agentes" },
         { "<leader>b", group = "Buffers" },
         { "<leader>c", group = "Codigo / C++" },
         { "<leader>d", group = "Debug" },

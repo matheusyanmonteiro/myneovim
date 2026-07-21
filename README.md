@@ -8,6 +8,7 @@
   <img alt="Neovim 0.12+" src="https://img.shields.io/badge/Neovim-0.12%2B-45E6E6?style=for-the-badge&amp;logo=neovim&amp;logoColor=090A12">
   <img alt="Lua" src="https://img.shields.io/badge/Lua-config-A970FF?style=for-the-badge&amp;logo=lua&amp;logoColor=white">
   <img alt="C++" src="https://img.shields.io/badge/C%2B%2B-23-4D9EFF?style=for-the-badge&amp;logo=cplusplus&amp;logoColor=white">
+  <img alt="AI workbench" src="https://img.shields.io/badge/AI-Codex%20%2B%20Claude-FF5FBD?style=for-the-badge">
   <img alt="License MIT" src="https://img.shields.io/badge/License-MIT-55E68A?style=for-the-badge">
 </p>
 
@@ -31,6 +32,7 @@ between you and Neovim.
 | Syntax | Treesitter highlighting, indentation and context |
 | Intelligence | Mason, native LSP configuration, clangd, diagnostics and code actions |
 | Completion | nvim-cmp, LuaSnip, friendly snippets and autopairs |
+| AI workbench | OpenAI Codex and Anthropic Claude CLIs, contextual prompts and file watching |
 | Markdown | Obsidian-style headings, callouts, tables, tasks, links and side preview |
 | Git | Gitsigns, Diffview, hunks, history and blame |
 | C++ | C++23 compiler workflow, Quickfix, clangd and codelldb |
@@ -74,6 +76,16 @@ Then launch the system:
 nvim
 ```
 
+To restore the optional AI workbench, install the official CLIs and complete
+their interactive sign-in once:
+
+```bash
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
+curl -fsSL https://claude.ai/install.sh | bash
+codex
+claude
+```
+
 > A Nerd Font is strongly recommended. The dashboard text works everywhere,
 > while file icons and interface symbols look best with JetBrainsMono Nerd Font.
 
@@ -85,10 +97,15 @@ nvim
 - A C compiler for Treesitter parsers.
 - ripgrep and fd for fast project search.
 - g++ for the included C++ workflow.
+- OpenAI Codex CLI and Anthropic Claude Code for the AI workbench.
+- lsof and ps are recommended for detecting active agent processes.
 
-The bootstrap handles these on supported systems. See
+The bootstrap handles the editor and system dependencies on supported systems.
+See
 [Fresh-system recovery](docs/RECOVERY.md) for the full recovery procedure and
-manual verification steps.
+manual verification steps. The AI bridge is restored with the other plugins;
+the agent executables and authentication stay private and must be restored
+separately.
 
 ## First minutes
 
@@ -102,6 +119,9 @@ manual verification steps.
 | `<leader>ff` | Find files |
 | `<leader>fg` | Search text in the project |
 | `<leader>tt` | Toggle the persistent terminal |
+| `<leader>ac` | Open the Codex workbench |
+| `<leader>aC` | Open the Claude workbench |
+| `<leader>ap` | Choose a contextual AI prompt |
 | `<leader>us` | Start or stop Study Mode |
 | `<leader>mr` | Toggle rendered Markdown |
 | `<leader>mp` | Open Markdown side preview |
@@ -134,6 +154,7 @@ module boundaries and which files are intentionally kept out of Git.
 ## Learning resources
 
 - [Complete Portuguese study guide](docs/guide-pt-BR.md)
+- [Codex and Claude AI workbench guide](docs/AI_WORKBENCH.md)
 - [Keymap reference](docs/KEYMAPS.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Fresh-system recovery](docs/RECOVERY.md)

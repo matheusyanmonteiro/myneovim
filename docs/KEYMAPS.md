@@ -18,6 +18,21 @@
 | `<leader>tt` / `<C-\>` | Toggle terminal |
 | `<Esc><Esc>` | Leave terminal mode |
 
+## AI workbench
+
+| Key | Action |
+| --- | --- |
+| `<leader>ac` | Toggle OpenAI Codex |
+| `<leader>aC` | Toggle Anthropic Claude |
+| `<leader>aa` | Toggle the most recently used agent |
+| `<leader>as` | Select an installed agent |
+| `<leader>ap` | Select a prepared prompt |
+| `<leader>at` | Send the current position or selection |
+| `<leader>af` | Send the current file reference |
+| `<leader>av` | Send the visual selection |
+| `<leader>ad` | Close the current agent session |
+| `<C-.>` | Focus the agent or return to the editor |
+
 ## LSP
 
 | Key | Action |

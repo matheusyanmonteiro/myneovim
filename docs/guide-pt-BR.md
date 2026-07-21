@@ -395,7 +395,30 @@ Study Mode:
 
 Durante o Study Mode, o cronômetro aparece na statusline.
 
-## 18. Tema e interface VICARIOUS
+## 18. Bancada de IA — Codex e Claude
+
+Os dois agentes rodam em terminais controlados pelo Sidekick e reutilizam os
+logins dos CLIs instalados na máquina. Nenhuma chave de API fica neste
+repositório.
+
+- `<leader>ac`: abrir ou esconder Codex.
+- `<leader>aC`: abrir ou esconder Claude (`C` maiúsculo).
+- `<leader>aa`: alternar o agente mais recente.
+- `<leader>as`: escolher um agente instalado.
+- `<leader>ap`: escolher um prompt pronto para estudo, revisão ou testes.
+- `<leader>af`: enviar a referência do arquivo atual.
+- No modo Visual, `<leader>av`: enviar a seleção.
+- `Ctrl-.`: alternar o foco entre código e agente.
+
+Abra o Neovim na raiz do projeto com `nvim .`, pois esse diretório será o
+contexto de trabalho da IA. Sempre revise alterações com `<leader>gd` e rode os
+testes antes de criar um commit.
+
+O tutorial completo, incluindo exemplos, controles do terminal, segurança e
+recuperação depois de formatar o sistema, está em
+[`docs/AI_WORKBENCH.md`](AI_WORKBENCH.md).
+
+## 19. Tema e interface VICARIOUS
 
 Arquivos importantes:
 
@@ -436,7 +459,7 @@ módulo durante experiências, é possível usar:
 
 Reiniciar continua sendo mais seguro enquanto você está aprendendo.
 
-## 19. Lazy e Mason
+## 20. Lazy e Mason
 
 ```vim
 :Lazy
@@ -451,7 +474,7 @@ Antes de atualizar tudo, é recomendável manter uma cópia ou commit da
 configuração. Se uma atualização quebrar algo, o lockfile ajuda a identificar
 o que mudou.
 
-## 20. Ajuda e diagnóstico
+## 21. Ajuda e diagnóstico
 
 O sistema de ajuda do Neovim é uma das ferramentas mais importantes:
 
@@ -472,7 +495,7 @@ Dicas:
 - `<leader>un` abre o histórico visual de notificações.
 - `:checkhealth` verifica plugins, provedores e ferramentas externas.
 
-## 21. Exercícios progressivos
+## 22. Exercícios progressivos
 
 ### Nível 1 — fundamentos
 
@@ -514,7 +537,15 @@ Dicas:
 4. Coloque um breakpoint num programa C++.
 5. Acompanhe uma variável usando `F10` e `F11`.
 
-## 22. Regra de ouro para aprender
+### Nível 6 — estudo com IA
+
+1. Abra um projeto de treino com `nvim .`.
+2. Selecione uma função e envie com `<leader>av`.
+3. Use o prompt `estudar` em `<leader>ap`.
+4. Resolva o exercício proposto sem copiar uma resposta pronta.
+5. Peça uma revisão ao outro agente e compare as explicações.
+
+## 23. Regra de ouro para aprender
 
 Não tente memorizar tudo de uma vez. Escolha dois ou três comandos, use-os
 durante alguns dias e só então acrescente outros. Quando uma ação parecer
